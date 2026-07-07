@@ -1,0 +1,59 @@
+import Link from "next/link";
+
+export const metadata = {
+  title: "Director – Academics — RGU",
+};
+
+export default function DirectorAcademicsPage() {
+  return (
+    <main>
+      <Link href="/" className="back-link">
+        ← Back to organisation structure
+      </Link>
+
+      <h1>Director – Academics</h1>
+      <p>
+        Drafted content — no source job description was supplied for this
+        role, so this is a reasonable starting draft based on the role title.
+        Edit freely.
+      </p>
+
+      <section>
+        <h2>Roles &amp; Responsibilities</h2>
+        <ul>
+          <li>Lead curriculum design and review, including outcome-based education (OBE) implementation.</li>
+          <li>Plan and monitor adherence to the academic calendar across all Schools.</li>
+          <li>Provide input on faculty recruitment needs and drive faculty development programs (FDPs).</li>
+          <li>Conduct academic audits and monitor teaching-learning quality.</li>
+          <li>Coordinate academic matters with Deans and HODs across Schools and Departments.</li>
+          <li>Coordinate examination policy with the examination cell.</li>
+          <li>Drive new program approvals and ensure regulatory compliance (UGC/AICTE).</li>
+          <li>Monitor student academic performance and oversee remedial/support programs.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Expected Outcome</h2>
+        <ul>
+          <li>Improved academic outcomes — pass percentage, result quality, and progression rates.</li>
+          <li>Updated, industry-relevant curriculum across all programs.</li>
+          <li>Increased faculty participation in development programs.</li>
+          <li>Strong academic governance with minimal regulatory compliance gaps.</li>
+          <li>Consistent academic quality across all Schools and Departments.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Things to be Addressed in Management Review Meeting</h2>
+        <ul>
+          <li>Curriculum revision status and OBE implementation progress.</li>
+          <li>Academic calendar adherence and any deviations.</li>
+          <li>Faculty development programs conducted versus planned.</li>
+          <li>Student academic performance trends (pass percentage, dropout rates).</li>
+          <li>Regulatory compliance status, including new program approvals.</li>
+          <li>Escalations from Deans/HODs requiring leadership decisions.</li>
+        </ul>
+      </section>
+    </main>
+  );
+}

@@ -17,9 +17,9 @@ export default function Home() {
       </header>
 
       {/* Vice-Chancellor sits alone at the top. Academic Structure, Strategic
-          Directors and the Registrar are all one step below (direct reports).
-          Shared Services is a further step below — it reports to the Registrar,
-          not directly to the VC. */}
+          Directors, the Registrar, and the Controller of Examinations are all
+          one step below (direct reports). Shared Services is a further step
+          below — it reports to the Registrar, not directly to the VC. */}
       <Link href="/vice-chancellor" className="vc-card">
         <span className="vc-avatar">
           <Icon name="user" size={26} />
@@ -29,15 +29,16 @@ export default function Home() {
         <span className="vc-sub">Academic &amp; Strategic Leadership</span>
       </Link>
 
-      <div className="branch branch-fork3">
+      <div className="branch branch-fork4">
         <span className="branch-stem" />
-        <span className="branch-bar three" />
-        <span className="branch-drop drop-1" />
-        <span className="branch-drop drop-2" />
-        <span className="branch-drop drop-3" />
+        <span className="branch-bar four" />
+        <span className="branch-drop drop4-0" />
+        <span className="branch-drop drop4-1" />
+        <span className="branch-drop drop4-2" />
+        <span className="branch-drop drop4-3" />
       </div>
 
-      <section className="org-grid3">
+      <section className="org-grid4">
         {/* Academic structure */}
         <div className="panel academic-panel">
           <div className="panel-title">
@@ -153,6 +154,21 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Controller of Examinations — a direct report to the VC, standing
+            alone (no further subordinates shown yet). */}
+        <div className="coe-branch">
+          <Link href="/controller-of-examinations" className="registrar-card coe-card">
+            <span className="lead-avatar coe-avatar">
+              <Icon name="medal" />
+            </span>
+            <span>
+              <span className="lead-title">Controller of Examinations</span>
+              <br />
+              <span className="lead-sub">Examinations &amp; Evaluation</span>
+            </span>
+          </Link>
         </div>
       </section>
 

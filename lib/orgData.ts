@@ -90,46 +90,40 @@ export const schools: {
 
 export const directors: { slug: string; title: string; icon: string; summary: string }[] = [
   {
-    slug: "director-industry-placement",
-    title: "Director – Industry & Placement",
+    slug: "director-research",
+    title: "Director – Research",
+    icon: "microscope",
+    summary: "Publications, patents, and the research ecosystem.",
+  },
+  {
+    slug: "director-industries-corporate-relations",
+    title: "Director – Industries & Corporate Relations",
     icon: "chart",
-    summary: "Industry relations, placements, internships, career development.",
+    summary: "Industry relations, corporate partnerships, placements, internships.",
   },
   {
-    slug: "director-raale",
-    title: "Director – RAALE",
+    slug: "director-global-affairs",
+    title: "Director – Global Affairs",
     icon: "globe",
-    summary: "Leads RAALE initiatives.",
+    summary: "International partnerships, global outreach, cross-border collaborations.",
   },
   {
-    slug: "director-quality-assurance-iqac",
-    title: "Director – Quality Assurance (IQAC)",
-    icon: "medal",
-    summary: "Leads quality initiatives, accreditation, academic audits, NIRF, rankings.",
-  },
-  {
-    slug: "director-academic-affairs",
-    title: "Director – Academic Affairs",
+    slug: "director-academics",
+    title: "Director – Academics",
     icon: "book",
     summary: "Academic policy, curriculum, faculty affairs, academic governance.",
   },
   {
-    slug: "director-research",
-    title: "Director – Research",
-    icon: "microscope",
-    summary: "Promotes research culture, grants, publications, collaborations.",
+    slug: "director-raale",
+    title: "Director – RAALE",
+    icon: "bulb",
+    summary: "Leads RAALE initiatives.",
   },
   {
-    slug: "director-student-affairs",
-    title: "Director – Student Affairs",
-    icon: "graduate",
-    summary: "Student welfare, extracurricular activities, discipline, student life.",
-  },
-  {
-    slug: "director-administration",
-    title: "Director – Administration",
-    icon: "wrench",
-    summary: "Operations, general administration, institutional support functions.",
+    slug: "director-iqac",
+    title: "Director – IQAC",
+    icon: "medal",
+    summary: "Leads quality initiatives, accreditation, academic audits, NIRF, rankings.",
   },
 ];
 
@@ -187,6 +181,13 @@ export function buildNodeRegistry(): Record<string, OrgNode> {
     title: "Registrar",
     kind: "leadership",
     summary: "Administration Head; Shared Services report to the Registrar.",
+  };
+  registry["controller-of-examinations"] = {
+    slug: "controller-of-examinations",
+    title: "Controller of Examinations",
+    kind: "leadership",
+    summary:
+      "Oversees examination administration, evaluation, and results processing; reports directly to the Vice-Chancellor.",
   };
 
   for (const school of schools) {

@@ -12,6 +12,8 @@
   --c-director-soft: #f2eff8;
   --c-service: #4f9a8f;         /* soft teal */
   --c-service-soft: #eaf5f2;
+  --c-exam: #b0793a;            /* muted amber */
+  --c-exam-soft: #f7f0e6;
 
   --ink: #2d3340;
   --ink-soft: #6b7280;
@@ -234,6 +236,17 @@ a {
   background: var(--c-service);
 }
 
+/* Controller of Examinations — same card shape as the Registrar, its own
+   muted amber accent, and its own place in the entrance sequence. */
+.coe-card {
+  background: var(--c-exam-soft);
+  animation-delay: 0.7s;
+}
+
+.coe-card .lead-avatar {
+  background: var(--c-exam);
+}
+
 /* Vice-Chancellor — the single apex of the chart, styled to stand apart
    from every other card: centred, larger, deep navy, with a soft glow. */
 .vc-card {
@@ -309,23 +322,25 @@ a {
 
 /* ---------- Reporting structure ----------
    The Vice-Chancellor sits alone at the top. Academic Structure, Strategic
-   Directors, and the Registrar are all one step below (direct reports, shown
-   as a three-way fork). Shared Services is a further step below, hanging off
-   the Registrar only — it reports to the Registrar, not directly to the VC. */
-.org-grid3 {
+   Directors, the Registrar, and the Controller of Examinations are all one
+   step below (direct reports, shown as a four-way fork). Shared Services is
+   a further step below, hanging off the Registrar only — it reports to the
+   Registrar, not directly to the VC. */
+.org-grid4 {
   display: grid;
-  grid-template-columns: 1.15fr 0.95fr 0.9fr;
+  grid-template-columns: 1.15fr 0.95fr 0.9fr 0.65fr;
   gap: 18px;
   align-items: start;
 }
 
 @media (max-width: 1040px) {
-  .org-grid3 {
+  .org-grid4 {
     grid-template-columns: 1fr;
   }
 }
 
-.registrar-branch {
+.registrar-branch,
+.coe-branch {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -357,7 +372,7 @@ a {
   height: 100%;
 }
 
-.branch-fork3 .branch-stem {
+.branch-fork4 .branch-stem {
   height: 12px;
 }
 
@@ -370,9 +385,9 @@ a {
   animation: fadeInUp 0.35s ease 0.6s forwards;
 }
 
-.branch-bar.three {
-  left: 19%;
-  right: 15%;
+.branch-bar.four {
+  left: 16%;
+  right: 9%;
 }
 
 .branch-drop {
@@ -385,14 +400,17 @@ a {
   animation: stemGrow 0.3s ease 0.66s forwards;
 }
 
-.drop-1 {
-  left: calc(19% - 1px);
+.drop4-0 {
+  left: calc(16% - 1px);
 }
-.drop-2 {
-  left: calc(54% - 1px);
+.drop4-1 {
+  left: calc(44% - 1px);
 }
-.drop-3 {
-  left: calc(85% - 1px);
+.drop4-2 {
+  left: calc(70% - 1px);
+}
+.drop4-3 {
+  left: calc(91% - 1px);
 }
 
 /* Common Dean hub, at the top of the Academic Structure panel — one shared
@@ -526,10 +544,10 @@ a {
   box-shadow: 0 2px 6px rgba(30, 41, 59, 0.06), 0 12px 28px rgba(30, 41, 59, 0.07);
 }
 
-.org-grid3 > .panel:nth-child(1) {
+.org-grid4 > .panel:nth-child(1) {
   animation-delay: 0.46s;
 }
-.org-grid3 > .panel:nth-child(2) {
+.org-grid4 > .panel:nth-child(2) {
   animation-delay: 0.54s;
 }
 .services-panel {
