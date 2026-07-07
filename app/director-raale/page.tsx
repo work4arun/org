@@ -1,4 +1,6 @@
 import Link from "next/link";
+import CategoryTabs from "@/components/CategoryTabs";
+import raaleSections from "@/components/jd/RaaleContent";
 
 export const metadata = {
   title: "Director – RAALE — RGU",
@@ -15,27 +17,11 @@ export default function DirectorRaalePage() {
 
       <h1 className="jd-title">Director – RAALE</h1>
       <p className="jd-intro">
-        I still don&rsquo;t know what &ldquo;RAALE&rdquo; stands for, so I
-        haven&rsquo;t drafted specific responsibilities here — anything I wrote
-        would likely be wrong. Send me the full name/charter of this role and
-        I&rsquo;ll fill in Roles &amp; Responsibilities, Expected Outcome, and
-        Management Review Meeting items properly.
+        RAALE = Rathinam&rsquo;s Advanced Active Learning Ecosystem, responsible
+        for student competency growth.
       </p>
 
-      <section className="jd-section">
-        <h2>Roles &amp; Responsibilities</h2>
-        <p>To be added once the scope of RAALE is confirmed.</p>
-      </section>
-
-      <section className="jd-section">
-        <h2>Expected Outcome</h2>
-        <p>To be added once the scope of RAALE is confirmed.</p>
-      </section>
-
-      <section className="jd-section">
-        <h2>Things to be Addressed in Management Review Meeting</h2>
-        <p>To be added once the scope of RAALE is confirmed.</p>
-      </section>
+      <CategoryTabs sections={raaleSections} accent="director" />
     </main>
   );
 }

@@ -20,9 +20,10 @@ export default function Home() {
       </header>
 
       {/* Vice-Chancellor sits alone at the top. Academic Structure, Strategic
-          Directors, the Registrar, and the Controller of Examinations are all
-          one step below (direct reports). Shared Services is a further step
-          below — it reports to the Registrar, not directly to the VC. */}
+          Directors, the Registrar, the Controller of Examinations, and IT &
+          Infrastructure are all one step below (direct reports). Shared
+          Services is a further step below — it reports to the Registrar,
+          not directly to the VC. */}
       <Link href="/vice-chancellor" className="vc-card">
         <span className="vc-avatar">
           <Icon name="user" size={26} />
@@ -32,16 +33,17 @@ export default function Home() {
         <span className="vc-sub">Academic &amp; Strategic Leadership</span>
       </Link>
 
-      <div className="branch branch-fork4">
+      <div className="branch branch-fork-vc">
         <span className="branch-stem" />
-        <span className="branch-bar four" />
-        <span className="branch-drop drop4-0" />
-        <span className="branch-drop drop4-1" />
-        <span className="branch-drop drop4-2" />
-        <span className="branch-drop drop4-3" />
+        <span className="branch-bar vc5" />
+        <span className="branch-drop drop-vc-0" />
+        <span className="branch-drop drop-vc-1" />
+        <span className="branch-drop drop-vc-2" />
+        <span className="branch-drop drop-vc-3" />
+        <span className="branch-drop drop-vc-4" />
       </div>
 
-      <section className="org-grid4">
+      <section className="org-grid5">
         {/* Academic structure */}
         <div className="panel academic-panel">
           <div className="panel-title">
@@ -81,7 +83,7 @@ export default function Home() {
           </div>
 
           <div className="dean-hub-wrap">
-            <span className="dean-hub">DEANS</span>
+            <Link href="/dean" className="dean-hub">DEANS</Link>
           </div>
 
           <div className="branch branch-single hub-link">
@@ -89,7 +91,7 @@ export default function Home() {
           </div>
 
           <div className="dean-hub-wrap hod-hub-wrap">
-            <span className="dean-hub hod-hub">HODS</span>
+            <Link href="/hod" className="dean-hub hod-hub">HODS</Link>
             <span className="hod-director-arrow" aria-hidden="true" />
           </div>
         </div>
@@ -170,6 +172,21 @@ export default function Home() {
               <span className="lead-title">Controller of Examinations</span>
               <br />
               <span className="lead-sub">Examinations &amp; Evaluation</span>
+            </span>
+          </Link>
+        </div>
+
+        {/* IT & Infrastructure — also a direct report to the VC, standing
+            alone (no further subordinates shown yet). */}
+        <div className="it-branch">
+          <Link href="/it-infrastructure" className="registrar-card it-card">
+            <span className="lead-avatar it-avatar">
+              <Icon name="monitor" />
+            </span>
+            <span>
+              <span className="lead-title">IT &amp; Infrastructure</span>
+              <br />
+              <span className="lead-sub">Technology &amp; Campus Systems</span>
             </span>
           </Link>
         </div>

@@ -189,6 +189,13 @@ export function buildNodeRegistry(): Record<string, OrgNode> {
     summary:
       "Oversees examination administration, evaluation, and results processing; reports directly to the Vice-Chancellor.",
   };
+  registry["it-infrastructure"] = {
+    slug: "it-infrastructure",
+    title: "IT & Infrastructure",
+    kind: "leadership",
+    summary:
+      "Runs campus technology, networks, and digital infrastructure; reports directly to the Vice-Chancellor.",
+  };
 
   for (const school of schools) {
     registry[school.slug] = {
