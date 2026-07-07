@@ -1,0 +1,992 @@
+:root {
+  /* Pure white canvas */
+  --bg: #ffffff;
+  --panel: #ffffff;
+
+  /* Mild, muted accents */
+  --c-leadership: #2b3a67;      /* deep muted navy */
+  --c-leadership-soft: #eef1f8;
+  --c-school: #5b7db1;          /* soft blue */
+  --c-school-soft: #eef3fa;
+  --c-director: #7d6ca8;        /* muted lavender */
+  --c-director-soft: #f2eff8;
+  --c-service: #4f9a8f;         /* soft teal */
+  --c-service-soft: #eaf5f2;
+
+  --ink: #2d3340;
+  --ink-soft: #6b7280;
+  --line: #e3e7ee;
+  --line-strong: #cfd6e2;
+
+  --radius: 12px;
+  --shadow: 0 1px 2px rgba(30, 41, 59, 0.04), 0 6px 18px rgba(30, 41, 59, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---------- Animation primitives ---------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes stemGrow {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes dashFlow {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 -20px;
+  }
+}
+
+@keyframes arrowPulse {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 0.75;
+  }
+  50% {
+    transform: translate(-50%, -3px);
+    opacity: 1;
+  }
+}
+
+@keyframes logoBreathe {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(43, 58, 103, 0.08);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(43, 58, 103, 0);
+  }
+}
+
+.animate-in {
+  opacity: 0;
+  animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+.page {
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 28px 32px 64px;
+}
+
+@media (min-width: 1700px) {
+  .page {
+    max-width: 82vw;
+  }
+}
+
+/* ---------- Logo placeholder + heading ---------- */
+.masthead {
+  text-align: center;
+  padding: 12px 0 8px;
+}
+
+.logo-placeholder {
+  width: 132px;
+  height: 132px;
+  margin: 0 auto 14px;
+  border: 2px dashed var(--line-strong);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-soft);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  line-height: 1.4;
+  background: #fcfcfd;
+  opacity: 0;
+  animation: popIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+    logoBreathe 3.2s ease-in-out 0.6s infinite;
+}
+
+.masthead h1 {
+  margin: 6px 0 2px;
+  font-size: 26px;
+  letter-spacing: 0.01em;
+  color: var(--c-leadership);
+  opacity: 0;
+  animation: fadeInDown 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.12s forwards;
+}
+
+.masthead p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+  opacity: 0;
+  animation: fadeInDown 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.22s forwards;
+}
+
+/* ---------- Top leadership ---------- */
+.registrar-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 22px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--c-service-soft);
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.62s;
+  transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.18s ease;
+}
+
+.registrar-card:hover,
+.card:hover,
+.list-row:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 2px 4px rgba(30, 41, 59, 0.06), 0 10px 24px rgba(30, 41, 59, 0.08);
+}
+
+.registrar-card:hover .lead-avatar {
+  transform: scale(1.1) rotate(-4deg);
+}
+
+.lead-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: var(--c-leadership);
+  flex: none;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.registrar-card .lead-avatar {
+  background: var(--c-service);
+}
+
+/* Vice-Chancellor — the single apex of the chart, styled to stand apart
+   from every other card: centred, larger, deep navy, with a soft glow. */
+.vc-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 10px auto 0;
+  padding: 22px 44px 20px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #34406e 0%, var(--c-leadership) 100%);
+  box-shadow: 0 8px 28px rgba(43, 58, 103, 0.22), 0 2px 6px rgba(43, 58, 103, 0.14);
+  opacity: 0;
+  animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s ease;
+}
+
+.vc-card:hover {
+  transform: translateY(-3px) scale(1.015);
+  box-shadow: 0 12px 34px rgba(43, 58, 103, 0.28), 0 3px 8px rgba(43, 58, 103, 0.16);
+}
+
+.vc-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--c-leadership);
+  background: #fff;
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.14);
+  margin-bottom: 8px;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.vc-card:hover .vc-avatar {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.vc-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.vc-title {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #fff;
+}
+
+.vc-sub {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.lead-title {
+  font-weight: 650;
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.lead-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+/* ---------- Reporting structure ----------
+   The Vice-Chancellor sits alone at the top. Academic Structure, Strategic
+   Directors, and the Registrar are all one step below (direct reports, shown
+   as a three-way fork). Shared Services is a further step below, hanging off
+   the Registrar only — it reports to the Registrar, not directly to the VC. */
+.org-grid3 {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr 0.9fr;
+  gap: 18px;
+  align-items: start;
+}
+
+@media (max-width: 1040px) {
+  .org-grid3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.registrar-branch {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Connecting stems between a leadership card and the panel(s) below it */
+.branch {
+  position: relative;
+  width: 100%;
+  height: 26px;
+  flex: none;
+}
+
+.branch-stem {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 1px);
+  width: 2px;
+  height: 100%;
+  background: var(--c-leadership);
+  transform-origin: top;
+  opacity: 0;
+  animation: stemGrow 0.4s ease 0.5s forwards;
+}
+
+.branch-single .branch-stem {
+  background: var(--c-service);
+  animation-delay: 0.72s;
+  height: 100%;
+}
+
+.branch-fork3 .branch-stem {
+  height: 12px;
+}
+
+.branch-bar {
+  position: absolute;
+  top: 12px;
+  height: 2px;
+  background: var(--c-leadership);
+  opacity: 0;
+  animation: fadeInUp 0.35s ease 0.6s forwards;
+}
+
+.branch-bar.three {
+  left: 19%;
+  right: 15%;
+}
+
+.branch-drop {
+  position: absolute;
+  top: 12px;
+  width: 2px;
+  height: 14px;
+  background: var(--c-leadership);
+  opacity: 0;
+  animation: stemGrow 0.3s ease 0.66s forwards;
+}
+
+.drop-1 {
+  left: calc(19% - 1px);
+}
+.drop-2 {
+  left: calc(54% - 1px);
+}
+.drop-3 {
+  left: calc(85% - 1px);
+}
+
+/* Common Dean hub, at the top of the Academic Structure panel — one shared
+   node (instead of a Dean box repeated under every school) that fans out
+   into each school below it. */
+.dean-hub-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 2px 0 0;
+  opacity: 0;
+  animation: popIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards;
+}
+
+.hod-hub-wrap {
+  position: relative;
+  animation-delay: 1.05s;
+}
+
+/* HODs report functionally to Directors — a single dotted horizontal line
+   (matching the "Functional Reporting" legend), running the full width of
+   the gap between the two panels, arrowhead pointing back into HODS to
+   show the line moving from Directors → HODS. */
+.hod-director-arrow {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 36px;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    var(--c-director) 0,
+    var(--c-director) 4px,
+    transparent 4px,
+    transparent 9px
+  );
+  transform: translateY(-50%);
+  opacity: 0;
+  animation: fadeInUp 0.4s ease 1.2s forwards;
+  z-index: 3;
+}
+
+.hod-director-arrow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -1px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-right: 6px solid var(--c-director);
+}
+
+@media (max-width: 1040px) {
+  .hod-director-arrow {
+    display: none;
+  }
+}
+
+.dean-hub {
+  display: inline-block;
+  padding: 5px 26px;
+  border-radius: 8px;
+  border: 1.5px solid var(--c-school);
+  background: var(--c-school-soft);
+  color: var(--c-school);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* Straight link between the DEANS hub and the HODS hub */
+.hub-link {
+  height: 18px;
+}
+
+.hub-link .branch-stem {
+  background: var(--c-school);
+  animation-delay: 0.92s;
+}
+
+.branch-fork5 {
+  height: 24px;
+  margin-top: 2px;
+}
+
+.branch-fork5 .branch-stem {
+  height: 10px;
+}
+
+.branch-bar.five {
+  top: 10px;
+  left: 10%;
+  right: 10%;
+}
+
+.branch-fork5 .branch-drop {
+  top: 10px;
+  height: 12px;
+}
+
+.drop5-0 {
+  left: calc(10% - 1px);
+}
+.drop5-1 {
+  left: calc(30% - 1px);
+}
+.drop5-2 {
+  left: calc(50% - 1px);
+}
+.drop5-3 {
+  left: calc(70% - 1px);
+}
+.drop5-4 {
+  left: calc(90% - 1px);
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px 16px 18px;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transition: box-shadow 0.2s ease;
+}
+
+.panel:hover {
+  box-shadow: 0 2px 6px rgba(30, 41, 59, 0.06), 0 12px 28px rgba(30, 41, 59, 0.07);
+}
+
+.org-grid3 > .panel:nth-child(1) {
+  animation-delay: 0.46s;
+}
+.org-grid3 > .panel:nth-child(2) {
+  animation-delay: 0.54s;
+}
+.services-panel {
+  animation-delay: 0.78s;
+}
+
+.panel-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 2px 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+/* ---------- Academic structure: side-by-side school columns ---------- */
+.academic-panel {
+  padding: 16px 10px 18px;
+}
+
+.academic-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 2px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.school-col {
+  flex: 1 1 0;
+  min-width: 108px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 6px;
+  border-right: 1px dashed var(--line);
+  opacity: 0;
+  animation: fadeInUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.school-col:last-child {
+  border-right: none;
+}
+
+.school-col-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  padding: 4px;
+  border-radius: 8px;
+  width: 100%;
+  transition: background 0.12s ease;
+}
+
+.school-col-head:hover {
+  background: #fafbfc;
+}
+
+.school-col-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  flex: none;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.school-col-head:hover .school-col-icon {
+  transform: scale(1.12) rotate(-6deg);
+}
+
+.school-col-title {
+  font-weight: 700;
+  font-size: 10.5px;
+  line-height: 1.25;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+/* Vertical "reports to" connector: flowing dashes + pulsing arrowhead, both
+   pointing up the chain (toward the superior), echoing the reporting-line legend. */
+.connector {
+  width: 2px;
+  height: 16px;
+  position: relative;
+  margin: 2px 0;
+  flex: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--line-strong) 0,
+    var(--line-strong) 3px,
+    transparent 3px,
+    transparent 7px
+  );
+  background-size: 2px 20px;
+  animation: dashFlow 0.9s linear infinite;
+}
+
+.connector::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 6px solid var(--line-strong);
+  animation: arrowPulse 1.4s ease-in-out infinite;
+}
+
+.dean-box {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 5px 4px;
+  border-radius: 7px;
+  border: 1.5px solid var(--line-strong);
+  background: #fff;
+  transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.18s ease;
+}
+
+.dean-box:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: var(--shadow);
+}
+
+.hod-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.hod-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  opacity: 0;
+  animation: fadeInUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hod-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  width: 100%;
+  padding: 6px 5px;
+  border-radius: 7px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  font-size: 9.5px;
+  line-height: 1.25;
+  text-align: center;
+  transition: border-color 0.18s ease, transform 0.18s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.18s ease;
+}
+
+.hod-box:hover {
+  border-color: var(--c-school);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: var(--shadow);
+}
+
+.hod-name {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.hod-box .hod-tag {
+  font-size: 8px;
+  padding: 1px 5px;
+}
+
+.col-ellipsis {
+  color: var(--ink-soft);
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin-top: 4px;
+}
+
+.hod-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 2px 6px;
+  background: #fafbfc;
+  flex: none;
+}
+
+@media (max-width: 700px) {
+  .school-col {
+    min-width: 130px;
+  }
+}
+
+/* ---------- Generic list rows (directors, services) ---------- */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 11px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #fff;
+  opacity: 0;
+  animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.list-row.director .row-icon {
+  background: var(--c-director);
+}
+.list-row.director:hover {
+  border-color: var(--c-director);
+}
+.list-row.service .row-icon {
+  background: var(--c-service);
+}
+.list-row.service:hover {
+  border-color: var(--c-service);
+}
+
+.row-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  flex: none;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.list-row:hover .row-icon {
+  transform: scale(1.1) rotate(-4deg);
+}
+
+.row-title {
+  font-weight: 640;
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+.row-sub {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  margin-top: 2px;
+  line-height: 1.35;
+}
+
+/* ---------- Plain Dean → Department reference (deliberately dull) ---------- */
+.dull-panel {
+  margin-top: 22px;
+  background: #fafafa;
+  border-color: var(--line);
+  box-shadow: none;
+  animation: none;
+  opacity: 1;
+}
+
+.dull-panel .panel-title {
+  color: var(--ink-soft);
+}
+
+.dull-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px 22px;
+}
+
+.dull-school {
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+
+.dull-dean {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.dull-list {
+  margin: 0;
+  padding-left: 16px;
+  list-style: disc;
+  color: var(--ink-soft);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.dull-tag {
+  font-size: 10px;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 1px 5px;
+  margin-left: 2px;
+}
+
+/* ---------- Legend / principles ---------- */
+.footnotes {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 18px;
+  margin-top: 26px;
+}
+
+@media (max-width: 1040px) {
+  .footnotes {
+    grid-template-columns: 1fr;
+  }
+}
+
+.note-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px 18px;
+  background: #fcfdff;
+  opacity: 0;
+  animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.footnotes .note-card:nth-child(1) {
+  animation-delay: 0.7s;
+}
+.footnotes .note-card:nth-child(2) {
+  animation-delay: 0.78s;
+}
+
+.note-card h3 {
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.note-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--ink);
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.swatch {
+  width: 26px;
+  height: 0;
+  border-top: 2px solid var(--c-leadership);
+  flex: none;
+}
+.swatch.dashed {
+  border-top-style: dashed;
+  border-color: var(--c-school);
+}
+.swatch.dotted {
+  border-top-style: dashed;
+  border-color: var(--c-director);
+}
+
+/* ---------- Stub page ---------- */
+.stub {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-bottom: 26px;
+  opacity: 0;
+  animation: fadeInUp 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transition: color 0.15s ease, gap 0.15s ease;
+}
+.back-link:hover {
+  color: var(--c-leadership);
+  gap: 9px;
+}
+
+.stub-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  opacity: 0;
+  animation: popIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.08s forwards;
+}
+
+.stub h1 {
+  margin: 0 0 12px;
+  font-size: 30px;
+  color: var(--c-leadership);
+  line-height: 1.2;
+  opacity: 0;
+  animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.16s forwards;
+}
+
+.stub .lead {
+  font-size: 16px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0 0 28px;
+  opacity: 0;
+  animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.24s forwards;
+}
+
+.stub-placeholder {
+  border: 2px dashed var(--line-strong);
+  border-radius: 14px;
+  padding: 40px 24px;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 14px;
+  background: #fcfcfd;
+  opacity: 0;
+  animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.32s forwards;
+}

@@ -1,0 +1,13 @@
+import ts from 'typescript';
+import fs from 'fs';
+const src = fs.readFileSync('./lib/orgData.ts','utf8');
+const js = ts.transpileModule(src,{compilerOptions:{module:'ESNext',target:'ES2020'}}).outputText;
+fs.writeFileSync('./_orgData.mjs', js);
+const mod = await import('./_orgData.mjs');
+const slugs = mod.allSlugs;
+console.log('total stub pages:', slugs.length);
+console.log('schools:', mod.schools.length, '| directors:', mod.directors.length, '| services:', mod.sharedServices.length);
+const dupes = slugs.filter((s,i)=>slugs.indexOf(s)!==i);
+console.log('duplicate slugs:', dupes.length ? dupes : 'none');
+console.log('sample:', slugs.slice(0,6).join(', '));
+console.log('leadership present:', slugs.includes('vice-chancellor') && slugs.includes('registrar'));
