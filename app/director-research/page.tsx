@@ -10,36 +10,36 @@ export const metadata = {
 
 export default function DirectorResearchPage() {
   return (
-    <main>
+    <main className="jd-page">
       <Link href="/" className="back-link">
         ← Back to organisation structure
       </Link>
 
-      <span>Strategic Director</span>
+      <span className="jd-badge">Strategic Director</span>
 
-      <h1>Deputy Director – Publications, Patents &amp; Research Ecosystem</h1>
-      <p>
+      <h1 className="jd-title">Deputy Director – Publications, Patents &amp; Research Ecosystem</h1>
+      <p className="jd-intro">
         This is the working Job Description on file for the{" "}
         <strong>Director – Research</strong> node. Note the title here reads
         &ldquo;Deputy Director&rdquo; — see the flag at the bottom of this page.
       </p>
 
-      <div>
+      <div className="jd-meta">
         <div>
-          <span>Institution</span>
+          <span className="jd-meta-label">Institution</span>
           Rathinam Global Deemed to be University
         </div>
         <div>
-          <span>Reporting To</span>
+          <span className="jd-meta-label">Reporting To</span>
           Director / Dean Research / Vice Chancellor / Chief Business Officer
         </div>
         <div>
-          <span>Role Type</span>
+          <span className="jd-meta-label">Role Type</span>
           Academic Leadership &amp; Research Development
         </div>
       </div>
 
-      <section>
+      <section className="jd-section">
         <h2>1. Role Purpose</h2>
         <p>
           The Deputy Director – Publications, Patents &amp; Research Ecosystem will be
@@ -56,9 +56,9 @@ export default function DirectorResearchPage() {
         </p>
       </section>
 
-      <section>
+      <section className="jd-section">
         <h2>2. Key Objectives</h2>
-        <ol>
+        <ol className="jd-list">
           <li>
             Increase the number of quality research publications in Scopus, Web of
             Science, UGC CARE, ABDC, PubMed, IEEE, Springer, Elsevier, Taylor &amp;
@@ -82,11 +82,11 @@ export default function DirectorResearchPage() {
         </ol>
       </section>
 
-      <section>
+      <section className="jd-section">
         <h2>3. Day-to-Day Responsibilities</h2>
 
         <h3>A. Daily Research Monitoring</h3>
-        <ol>
+        <ol className="jd-list">
           <li>
             Meet department research coordinators and collect updates on ongoing
             papers, patents, book chapters, conferences, and research proposals.
@@ -94,7 +94,7 @@ export default function DirectorResearchPage() {
           <li>Maintain a live publication and patent tracker for every department.</li>
           <li>
             Track faculty-wise research progress, including:
-            <ul>
+            <ul className="jd-list">
               <li>Paper title</li>
               <li>Journal/conference target</li>
               <li>Indexing status</li>
@@ -113,12 +113,12 @@ export default function DirectorResearchPage() {
         </ol>
 
         <h3>B. Faculty Publication Support</h3>
-        <ol>
+        <ol className="jd-list">
           <li>Create a structured paper-writing support system for faculty.</li>
           <li>Help faculty identify suitable journals and conferences based on subject area.</li>
           <li>
             Guide faculty on:
-            <ul>
+            <ul className="jd-list">
               <li>Research problem identification</li>
               <li>Literature review</li>
               <li>Research methodology</li>
@@ -137,7 +137,7 @@ export default function DirectorResearchPage() {
         </ol>
 
         <h3>C. Patent Development and IP Management</h3>
-        <ol>
+        <ol className="jd-list">
           <li>
             Identify patentable ideas from faculty projects, student projects, funded
             projects, incubation activities, and industry problems.
@@ -146,7 +146,7 @@ export default function DirectorResearchPage() {
           <li>Coordinate with patent attorneys, IP consultants, and legal teams for patent filing.</li>
           <li>
             Maintain a patent tracker covering:
-            <ul>
+            <ul className="jd-list">
               <li>Idea submitted</li>
               <li>Prior art search completed</li>
               <li>Drafting stage</li>
@@ -163,13 +163,13 @@ export default function DirectorResearchPage() {
         </ol>
 
         <h3>D. Conference and Academic Event Ecosystem</h3>
-        <ol>
+        <ol className="jd-list">
           <li>Plan and execute department-wise national and international conferences.</li>
           <li>Create an annual research conference calendar for the university.</li>
           <li>Ensure each department organizes at least one major academic/research event every year.</li>
           <li>
             Identify opportunities for sponsored conferences through:
-            <ul>
+            <ul className="jd-list">
               <li>Government bodies</li>
               <li>Industry partners</li>
               <li>Professional associations</li>
@@ -191,11 +191,11 @@ export default function DirectorResearchPage() {
         </ol>
 
         <h3>E. Sponsored Research and Funding Support</h3>
-        <ol>
+        <ol className="jd-list">
           <li>Identify funding opportunities from government, industry, CSR, and research agencies.</li>
           <li>
             Guide faculty in preparing proposals for:
-            <ul>
+            <ul className="jd-list">
               <li>Sponsored research</li>
               <li>Consultancy</li>
               <li>Seminars</li>
@@ -212,12 +212,12 @@ export default function DirectorResearchPage() {
         </ol>
 
         <h3>F. Research Policy and Process Development</h3>
-        <ol>
+        <ol className="jd-list">
           <li>Develop and implement a university-level research publication policy.</li>
           <li>Frame department-wise research targets and incentive structures.</li>
           <li>
             Create SOPs for:
-            <ul>
+            <ul className="jd-list">
               <li>Journal selection</li>
               <li>Manuscript submission</li>
               <li>Patent filing</li>
@@ -237,11 +237,11 @@ export default function DirectorResearchPage() {
         </ol>
 
         <h3>G. Research Data and Reporting</h3>
-        <ol>
+        <ol className="jd-list">
           <li>Prepare monthly research performance reports for management.</li>
           <li>
             Submit department-wise dashboards covering:
-            <ul>
+            <ul className="jd-list">
               <li>Papers submitted</li>
               <li>Papers accepted</li>
               <li>Papers published</li>
@@ -265,9 +265,9 @@ export default function DirectorResearchPage() {
         </ol>
       </section>
 
-      <section>
+      <section className="jd-section">
         <h2>4. Weekly Responsibilities</h2>
-        <ol>
+        <ol className="jd-list">
           <li>Conduct one weekly review meeting with department research coordinators.</li>
           <li>Review manuscript pipelines department-wise.</li>
           <li>Conduct one faculty support session or paper-writing clinic.</li>
@@ -278,9 +278,9 @@ export default function DirectorResearchPage() {
         </ol>
       </section>
 
-      <section>
+      <section className="jd-section">
         <h2>5. Monthly Responsibilities</h2>
-        <ol>
+        <ol className="jd-list">
           <li>Conduct a university-level research review meeting.</li>
           <li>Submit a monthly research dashboard to management.</li>
           <li>Ensure each department meets its minimum research activity target.</li>
@@ -294,9 +294,9 @@ export default function DirectorResearchPage() {
         </ol>
       </section>
 
-      <section>
+      <section className="jd-section">
         <h2>6. Quarterly Responsibilities</h2>
-        <ol>
+        <ol className="jd-list">
           <li>Organize one major research event, conference, conclave, or patent awareness program.</li>
           <li>Review the university research policy and incentive outcomes.</li>
           <li>Conduct department-wise research audits.</li>
@@ -307,9 +307,9 @@ export default function DirectorResearchPage() {
         </ol>
       </section>
 
-      <section>
+      <section className="jd-section">
         <h2>7. Annual Responsibilities</h2>
-        <ol>
+        <ol className="jd-list">
           <li>Prepare the annual research publication and patent plan.</li>
           <li>Create the annual conference and sponsored event calendar.</li>
           <li>Set department-wise publication, patent, grant, and conference targets.</li>
@@ -321,11 +321,11 @@ export default function DirectorResearchPage() {
         </ol>
       </section>
 
-      <section>
+      <section className="jd-section">
         <h2>8. Key Performance Indicators</h2>
 
         <h3>Publication KPIs</h3>
-        <ol>
+        <ol className="jd-list">
           <li>Number of papers submitted monthly.</li>
           <li>Number of papers accepted monthly.</li>
           <li>Number of papers published in Scopus/Web of Science/UGC CARE/other indexed journals.</li>
@@ -337,7 +337,7 @@ export default function DirectorResearchPage() {
         </ol>
 
         <h3>Patent KPIs</h3>
-        <ol>
+        <ol className="jd-list">
           <li>Number of patent ideas identified.</li>
           <li>Number of patentability searches completed.</li>
           <li>Number of patents filed.</li>
@@ -348,7 +348,7 @@ export default function DirectorResearchPage() {
         </ol>
 
         <h3>Conference and Event KPIs</h3>
-        <ol>
+        <ol className="jd-list">
           <li>Number of national conferences organized.</li>
           <li>Number of international conferences organized.</li>
           <li>Number of sponsored conferences organized.</li>
@@ -359,7 +359,7 @@ export default function DirectorResearchPage() {
         </ol>
 
         <h3>Funding and Research Ecosystem KPIs</h3>
-        <ol>
+        <ol className="jd-list">
           <li>Number of research proposals submitted.</li>
           <li>Number of grants sanctioned.</li>
           <li>Value of sponsored research received.</li>
@@ -369,13 +369,13 @@ export default function DirectorResearchPage() {
         </ol>
       </section>
 
-      <section>
+      <section className="jd-section">
         <h2>9. Suggested Minimum Targets</h2>
         <p>
           The final target may be fixed based on the number of departments and
           faculty strength. As a starting benchmark:
         </p>
-        <ol>
+        <ol className="jd-list">
           <li>Every department should maintain a minimum of 10–15 active paper pipelines at any point of time.</li>
           <li>Every department should file at least 3–5 patents per year.</li>
           <li>Every department should conduct at least one research event or conference per year.</li>
@@ -386,9 +386,9 @@ export default function DirectorResearchPage() {
         </ol>
       </section>
 
-      <section>
+      <section className="jd-section">
         <h2>10. Coordination Required With</h2>
-        <ol>
+        <ol className="jd-list">
           <li>Vice Chancellor / Pro Vice Chancellor</li>
           <li>Dean Research</li>
           <li>HoDs</li>
@@ -407,9 +407,9 @@ export default function DirectorResearchPage() {
         </ol>
       </section>
 
-      <section>
+      <section className="jd-section">
         <h2>11. Required Skills and Competencies</h2>
-        <ol>
+        <ol className="jd-list">
           <li>Strong understanding of research publications and indexing systems.</li>
           <li>Knowledge of Scopus, Web of Science, UGC CARE, Google Scholar, ORCID, Vidwan, and patent databases.</li>
           <li>Ability to guide faculty in paper writing and journal selection.</li>
@@ -423,12 +423,12 @@ export default function DirectorResearchPage() {
         </ol>
       </section>
 
-      <section>
+      <section className="jd-section">
         <h2>12. Daily Work Allocation Model</h2>
         <p>The Deputy Director&rsquo;s daily work can be divided as follows:</p>
 
         <h3>Morning – Review and Follow-up</h3>
-        <ul>
+        <ul className="jd-list">
           <li>Check paper, patent, and conference trackers.</li>
           <li>Follow up with department research coordinators.</li>
           <li>Review pending manuscripts and patent ideas.</li>
@@ -436,14 +436,14 @@ export default function DirectorResearchPage() {
         </ul>
 
         <h3>Midday – Faculty and Department Support</h3>
-        <ul>
+        <ul className="jd-list">
           <li>Meet faculty members or research groups.</li>
           <li>Conduct paper-writing or patent support discussions.</li>
           <li>Guide departments on journal selection, manuscript improvement, and research planning.</li>
         </ul>
 
         <h3>Afternoon – Ecosystem Development</h3>
-        <ul>
+        <ul className="jd-list">
           <li>
             Work on conference planning, sponsored event proposals, publisher
             tie-ups, industry partnerships, and funding opportunities.
@@ -452,7 +452,7 @@ export default function DirectorResearchPage() {
         </ul>
 
         <h3>Evening – Documentation and Reporting</h3>
-        <ul>
+        <ul className="jd-list">
           <li>Update dashboards.</li>
           <li>Prepare daily/weekly progress notes.</li>
           <li>Track submissions, approvals, publications, patents, and conference progress.</li>
@@ -460,7 +460,7 @@ export default function DirectorResearchPage() {
         </ul>
       </section>
 
-      <section>
+      <section className="jd-section">
         <h2>13. Expected Outcome of the Role</h2>
         <p>
           The Deputy Director should create a visible research movement inside the
@@ -472,9 +472,9 @@ export default function DirectorResearchPage() {
         </p>
       </section>
 
-      <section>
+      <section className="jd-section">
         <h2>14. Things to be Addressed in Management Review Meeting</h2>
-        <ul>
+        <ul className="jd-list">
           <li>Department-wise publication pipeline status against the 10–15 active-paper benchmark.</li>
           <li>Papers submitted, accepted, published, and rejected-then-resubmitted this period.</li>
           <li>Patent pipeline: ideas identified, filed, published, granted, and commercialized.</li>
@@ -486,7 +486,7 @@ export default function DirectorResearchPage() {
         </ul>
       </section>
 
-      <div>
+      <div className="jd-flag">
         <strong>Flag:</strong> this document is titled &ldquo;Deputy Director –
         Publications, Patents &amp; Research Ecosystem,&rdquo; reporting to
         Director / Dean Research / VC / CBO — it reads as a role one level

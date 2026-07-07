@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Icon from "@/components/Icon";
 import { schools, directors, sharedServices } from "@/lib/orgData";
@@ -5,13 +6,15 @@ import { schools, directors, sharedServices } from "@/lib/orgData";
 export default function Home() {
   return (
     <main className="page">
-      {/* Masthead — replace the placeholder with your university logo */}
       <header className="masthead">
-        <div className="logo-placeholder">
-          University
-          <br />
-          logo here
-        </div>
+        <Image
+          src="/logo.png"
+          alt="RGU logo"
+          width={440}
+          height={97}
+          className="logo-img"
+          priority
+        />
         <h1>RATHINAM GLOBAL DEEMED TO BE UNIVERSITY (RGU)</h1>
         <p>Organisation Structure</p>
       </header>

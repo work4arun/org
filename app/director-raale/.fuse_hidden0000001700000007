@@ -11,10 +11,8 @@ export default function DirectorRaalePage() {
         ← Back to organisation structure
       </Link>
 
-      <span className="jd-badge">Strategic Director</span>
-
       <h1 className="jd-title">Director – RAALE</h1>
-      <p className="jd-intro">
+      <p>
         I still don&rsquo;t know what &ldquo;RAALE&rdquo; stands for, so I
         haven&rsquo;t drafted specific responsibilities here — anything I wrote
         would likely be wrong. Send me the full name/charter of this role and

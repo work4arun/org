@@ -11,10 +11,8 @@ export default function DirectorIqacPage() {
         ← Back to organisation structure
       </Link>
 
-      <span className="jd-badge">Strategic Director</span>
-
       <h1 className="jd-title">Director – IQAC</h1>
-      <p className="jd-intro">
+      <p>
         Drafted content — no source job description was supplied for this
         role, so this is a reasonable starting draft based on standard IQAC
         (Internal Quality Assurance Cell) practice at Indian higher-ed
